@@ -27,11 +27,11 @@ let sound = 3;
 
 let ruleSet = [0, 0, 0, 1, 1, 1, 1, 0];
 
-let colorR = 255;
+let colorR = 0;
 
-let colorG = 255;
+let colorG = 0;
 
-let colorB = 255;
+let colorB = 0;
 
 // Current rule number (kept alongside ruleSet so game.js has a plain 0-255
 // value to score/save against without re-deriving it from the bit table).
