@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <main>
+      <input
+        type="range"
+        min="1"
+        max="255"
+        value="127"
+        class="slider"
+        id="slide"
+        onchange="updateSlider(this.value)"
+      />
+      <div>
+        <span id="sliderAmount"></span>
+        <label for="quantity"></label>
+        <span
+          ><button
+            class="button-59"
+            role="button"
+            type="button"
+            id="myBtn"
+            onclick="startBtn()"
+          >
+            Start/Pause
+          </button>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="255"
+            value="127"
+            onchange="updateInput(this.value)"
+          />
+          <button
+            class="button-59"
+            role="button"
+            type="button"
+            id="myBtn2"
+            onclick="resetSystem()"
+          >
+            Reset
+          </button>
+          <button
+            class="button-59"
+            role="button"
+            type="button"
+            id="myBtn3"
+            onclick="download()"
+          >
+            Save
+          </button>
+          RED
+          <input
+            type="number"
+            id="quantityR"
+            name="quantityR"
+            min="1"
+            max="255"
+            value="250"
+            onchange="updateColorR(this.value)"
+          />
+          GREEN
+          <input
+            type="number"
+            id="quantityG"
+            name="quantityG"
+            min="1"
+            max="255"
+            value="225"
+            onchange="updateColorG(this.value)"
+          />
+          BLUE
+          <input
+            type="number"
+            id="quantityB"
+            name="quantityB"
+            min="1"
+            max="255"
+            value="200"
+            onchange="updateColorB(this.value)"
+          />
+        </span>
+      </div>
+
+      <div id="gameBar">
+        <div id="scoreRow">
+          <span id="gameScore">Score: 0</span>
+          <span id="levelBadge" class="level-badge">Doodler</span>
+        </div>
+        <div id="levelProgress">
+          <div id="levelProgressTrack">
+            <div id="levelProgressFill"></div>
+          </div>
+          <span id="levelProgressLabel"></span>
+        </div>
+        <div id="gameButtonsRow">
+          <button
+            class="button-59"
+            role="button"
+            type="button"
+            id="achievementsBtn"
+            onclick="toggleAchievements()"
+          >
+            Achievements <span id="achievementsCount"></span>
+          </button>
+          <button
+            class="button-59"
+            role="button"
+            type="button"
+            id="surpriseBtn"
+            onclick="useSurpriseMe()"
+          >
+            🎲 Surprise Me (0)
+          </button>
+          <button
+            class="button-59"
+            role="button"
+            type="button"
+            id="galleryBtn"
+            onclick="toggleGallery()"
+          >
+            🔒 Gallery
+          </button>
+        </div>
+        <div id="paletteRow"></div>
+      </div>
+
+      <div id="achievementsPanel" class="game-panel hidden">
+        <ul id="achievementsList"></ul>
+      </div>
+
+      <div id="galleryPanel" class="game-panel hidden">
+        <ul id="galleryList"></ul>
+      </div>
+    </main>
+    <script src="game.js"></script>
+    <script src="sketch.js"></script>
+    <hr />
+    <p id="recordElement">Color Loom by: Little Marks</p>
+    <div id="toastContainer" aria-live="polite"></div>
+    <div id="confettiLayer"></div>
+  </body>
+</html>
